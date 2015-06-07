@@ -33,6 +33,9 @@ gem "haml-rails", "~> 0.8"
 group :test, :development do
   gem 'capybara'
   gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'selenium-webdriver', '~>2.45.0'
+  gem 'capybara-screenshot'
 end
 
 
