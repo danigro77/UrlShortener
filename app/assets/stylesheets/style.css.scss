@@ -1,0 +1,33 @@
+@mixin ellipsis {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  border: gray 1px solid;
+  margin: 20px;
+}
+h1 {
+  margin: 0;
+  background: gray;
+  line-height: 1.5em;
+}
+.wrapper {
+  width: 960px;
+  margin: 0 auto;
+  min-height: 200px;
+
+  .result {
+    font-size: 0.85em;
+    .original {
+      margin-right: 20px;
+    }
+    p {
+      display: inline;
+    }
+  }
+}

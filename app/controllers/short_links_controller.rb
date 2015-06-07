@@ -6,4 +6,9 @@ class ShortLinksController < ApplicationController
     render json: short_link
   end
 
+  def result_page
+    link = ShortLink.find_by_short(params[:short_link]).original
+    redirect_to link
+  end
+
 end

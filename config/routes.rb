@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   #   get 'products/:id' => 'catalog#view'
   post 'short_links/' => 'short_links#shorten_url'
 
+  get 'a/:short_link' => 'short_links#result_page'
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

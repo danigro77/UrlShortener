@@ -13,9 +13,14 @@ RSpec.feature "URL Shortener", :type => :feature do
       expect(page).to have_selector 'button'
       expect(page).to have_selector 'input'
 
-      fill_in 'URL', :with => 'http://www.google.com/this_is-a-test/?params=bla'
+      fill_in 'url_input', with: 'http://www.google.com/this_is-a-test/?params=bla'
       click_button 'Shorten'
-      expect(page).to have_content 'Success'
+    end
+
+    within('.result') do
+      expect(page).to have_content 'Original'
+      expect(page).to have_content 'Short'
+      expect(page).to have_selector 'a'
     end
   end
 end
