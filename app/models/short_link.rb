@@ -2,8 +2,9 @@ class ShortLink < ActiveRecord::Base
 
   before_validation :create_short_link
 
-  validates :original, presence: true, uniqueness: { case_sensitive: false }
+  validates :original, presence: true, uniqueness: { case_sensitive: false }, url:true
   validates :short, presence: true, uniqueness: { case_sensitive: true }
+  validates_format_of :original, :with => URI::regexp(%w(http https))
 
   def create_short_link
     existing = ShortLink.find_by_original(self.original)
